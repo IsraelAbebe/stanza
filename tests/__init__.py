@@ -14,16 +14,18 @@ TEST_HOME_VAR = 'STANZA_TEST_HOME'
 TEST_DIR_BASE_NAME = 'stanza_test'
 
 # check the working dir is set and compliant
-assert os.getenv(TEST_HOME_VAR) is not None, \
-    f'Please set {TEST_HOME_VAR} environment variable for test working dir, base name must be: {TEST_DIR_BASE_NAME}'
-TEST_WORKING_DIR = os.getenv(TEST_HOME_VAR)
-assert os.path.basename(TEST_WORKING_DIR) == TEST_DIR_BASE_NAME, \
-    f'Base name of test home dir must be: {TEST_DIR_BASE_NAME}'
+# assert os.getenv(TEST_HOME_VAR) is not None, \
+#     f'Please set {TEST_HOME_VAR} environment variable for test working dir, base name must be: {TEST_DIR_BASE_NAME}'
+# TEST_WORKING_DIR = os.getenv(TEST_HOME_VAR)
+# assert os.path.basename(TEST_WORKING_DIR) == TEST_DIR_BASE_NAME, \
+#     f'Base name of test home dir must be: {TEST_DIR_BASE_NAME}'
 
-TEST_MODELS_DIR = f'{TEST_WORKING_DIR}/models'
+TEST_WORKING_DIR = '/home/israel/Documents/repo/icog/stanza'
+
+TEST_MODELS_DIR = TEST_WORKING_DIR+'/stanza/models'
 
 # server resources
-SERVER_TEST_PROPS = f'{TEST_WORKING_DIR}/scripts/external_server.properties'
+SERVER_TEST_PROPS = TEST_WORKING_DIR+'/scripts/external_server.properties'
 
 # language resources
 LANGUAGE_RESOURCES = {}
@@ -42,19 +44,19 @@ MODEL_FILES = [TOKENIZE_MODEL, MWT_MODEL, POS_MODEL, POS_PRETRAIN, LEMMA_MODEL, 
 EN_KEY = 'en'
 EN_SHORTHAND = 'en_ewt'
 # models
-EN_MODELS_DIR = f'{TEST_WORKING_DIR}/models/{EN_SHORTHAND}_models'
-EN_MODEL_FILES = [f'{EN_MODELS_DIR}/{EN_SHORTHAND}_{model_fname}' for model_fname in MODEL_FILES]
+EN_MODELS_DIR = TEST_WORKING_DIR+'/models/{EN_SHORTHAND}_models'
+EN_MODEL_FILES = [TEST_WORKING_DIR+'/{EN_SHORTHAND}_{model_fname}' for model_fname in MODEL_FILES]
 
 # French resources
 FR_KEY = 'fr'
 FR_SHORTHAND = 'fr_gsd'
 # regression file paths
-FR_TEST_IN = f'{TEST_WORKING_DIR}/in/fr_gsd.test.txt'
-FR_TEST_OUT = f'{TEST_WORKING_DIR}/out/fr_gsd.test.txt.out'
-FR_TEST_GOLD_OUT = f'{TEST_WORKING_DIR}/out/fr_gsd.test.txt.out.gold'
+FR_TEST_IN = TEST_WORKING_DIR+'/in/fr_gsd.test.txt'
+FR_TEST_OUT = TEST_WORKING_DIR+'/out/fr_gsd.test.txt.out'
+FR_TEST_GOLD_OUT = TEST_WORKING_DIR+'/out/fr_gsd.test.txt.out.gold'
 # models
-FR_MODELS_DIR = f'{TEST_WORKING_DIR}/models/{FR_SHORTHAND}_models'
-FR_MODEL_FILES = [f'{FR_MODELS_DIR}/{FR_SHORTHAND}_{model_fname}' for model_fname in MODEL_FILES]
+FR_MODELS_DIR = TEST_WORKING_DIR+'/models/{FR_SHORTHAND}_models'
+FR_MODEL_FILES = [TEST_WORKING_DIR+'/{FR_SHORTHAND}_{model_fname}' for model_fname in MODEL_FILES]
 
 # Other language resources
 AR_SHORTHAND = 'ar_padt'

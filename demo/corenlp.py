@@ -1,4 +1,11 @@
+import stanza
+
+stanza.install_corenlp()
+
 from stanza.server import CoreNLPClient
+
+
+
 
 # example text
 print('---')
