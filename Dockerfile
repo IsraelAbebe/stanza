@@ -31,6 +31,8 @@ WORKDIR /STANZA
 
 RUN pip install -e .
 
+RUN pip install -r requirements.txt
+
 EXPOSE 50051
 
 RUN cd service
