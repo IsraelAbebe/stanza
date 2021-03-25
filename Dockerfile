@@ -29,9 +29,9 @@ COPY . /STANZA
 
 WORKDIR /STANZA
 
-RUN pip install -e .
+RUN python -m pip install -e .
 
-RUN pip install -r requirements.txt
+RUN python -m pip install -r requirements.txt
 
 EXPOSE 50051
 
