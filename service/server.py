@@ -24,8 +24,8 @@ class stanza_nlpServicer(stanza_pb2_grpc.stanza_nlpServicer):
 server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 stanza_pb2_grpc.add_stanza_nlpServicer_to_server(stanza_nlpServicer(), server)
 
-print('Starting server. Listening on port 50051.')
-server.add_insecure_port('localhost:50051')
+print('Starting server. Listening on port 3444.')
+server.add_insecure_port('localhost:3444')
 server.start()
 
 try:

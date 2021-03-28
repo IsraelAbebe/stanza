@@ -43,7 +43,7 @@ EXPOSE 7000
 
 # RUN python3.6 -m pip install -r requirements.txt
 
-COPY . root/STANZA
+COPY . /${SINGNET_REPOS}/STANZA
 
 WORKDIR /STANZA
 
@@ -65,7 +65,7 @@ RUN python3.6 -m pip install -r requirements.txt
 
 RUN cd service && python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. stanza.proto
 
-WORKDIR /STANZA/service
+WORKDIR /${SINGNET_REPOS}/STANZA/service
 
 CMD ["python3.6", "server.py"]
 
