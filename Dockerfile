@@ -45,7 +45,7 @@ EXPOSE 7000
 
 COPY . /${SINGNET_REPOS}/STANZA
 
-WORKDIR /STANZA
+WORKDIR //${SINGNET_REPOS}/STANZA
 
 # SNET Daemon
 RUN SNETD_GIT_VERSION=`curl -s https://api.github.com/repos/singnet/snet-daemon/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")' || echo "v3.1.6"` && \
