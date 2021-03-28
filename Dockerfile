@@ -23,13 +23,13 @@ RUN python3.6 -m pip install --upgrade setuptools
 ENV SINGNET_REPOS=/opt/singnet
 ENV ORGANIZATION_ID="odyssey-org"
 ENV ORGANIZATION_NAME="odyssey"
-ENV SERVICE_ID="uclnlp-service"
+ENV SERVICE_ID="stanza-service"
 ENV SERVICE_NAME="UCLNLP Service"
 ENV SERVICE_IP="195.201.197.25"
 ENV SERVICE_PORT="3444"
 ENV DAEMON_PORT="7000"
 ENV DAEMON_HOST="0.0.0.0"
-ENV USER_ID="Amante"
+ENV USER_ID="Israel"
 
 ARG nunet_adapter_address
 ENV nunet_adapter_address=${nunet_adapter_address}
