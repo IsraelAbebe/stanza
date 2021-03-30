@@ -24,7 +24,7 @@ ENV SINGNET_REPOS=/opt/singnet
 ENV ORGANIZATION_ID="odyssey-org"
 ENV ORGANIZATION_NAME="odyssey"
 ENV SERVICE_ID="stanza-service"
-ENV SERVICE_NAME="UCLNLP Service"
+ENV SERVICE_NAME="stanza Service"
 ENV SERVICE_IP="195.201.197.25"
 ENV SERVICE_PORT="3444"
 ENV DAEMON_PORT="7000"
@@ -65,7 +65,7 @@ RUN python3.6 -m pip install -r requirements.txt
 
 RUN cd service && python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. stanza.proto
 
-WORKDIR /${SINGNET_REPOS}/STANZA/service
+# WORKDIR /${SINGNET_REPOS}/STANZA/service
 
-CMD ["python3.6", "server.py"]
+CMD ["python3.6", "start_service.py"]
 
