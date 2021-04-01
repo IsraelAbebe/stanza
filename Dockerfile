@@ -23,10 +23,10 @@ RUN python3.6 -m pip install --upgrade setuptools
 ENV SINGNET_REPOS=/opt/singnet
 ENV ORGANIZATION_ID="odyssey-org"
 ENV ORGANIZATION_NAME="odyssey"
-ENV SERVICE_ID="stanza-service"
+ENV SERVICE_ID="stanzaservice"
 ENV SERVICE_NAME="stanza Service"
 ENV SERVICE_IP="195.201.197.25"
-ENV SERVICE_PORT="3444"
+ENV SERVICE_PORT="2379"
 ENV DAEMON_PORT="7000"
 ENV DAEMON_HOST="0.0.0.0"
 ENV USER_ID="Israel"
@@ -34,7 +34,7 @@ ENV USER_ID="Israel"
 ARG nunet_adapter_address
 ENV nunet_adapter_address=${nunet_adapter_address}
 
-EXPOSE 3444
+EXPOSE 2379
 EXPOSE 7000
 
 # COPY requirements.txt /tmp

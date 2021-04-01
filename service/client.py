@@ -3,7 +3,7 @@ import grpc
 import stanza_pb2
 import stanza_pb2_grpc
 
-channel = grpc.insecure_channel('localhost:50051')
+channel = grpc.insecure_channel('localhost:2379')
 
 stub = stanza_pb2_grpc.stanza_nlpStub(channel)
 
