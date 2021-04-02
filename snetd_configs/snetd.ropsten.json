@@ -1,0 +1,21 @@
+{
+  "DAEMON_END_POINT": "$DAEMON_HOST:$DAEMON_PORT",
+  "BLOCKCHAIN_NETWORK_SELECTED": "ropsten",
+  "ETHEREUM_JSON_RPC_ENDPOINT": "https://ropsten.infura.io/v3/e7732e1f679e461b9bb4da5653ac3fc2",
+  "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
+  "PASSTHROUGH_ENABLED": true,
+  "PASSTHROUGH_ENDPOINT": "http://localhost:$SERVICE_PORT",
+  "ORGANIZATION_ID": "$ORGANIZATION_ID",
+  "SERVICE_ID": "$SERVICE_ID",
+  
+  "PAYMENT_CHANNEL_STORAGE_SERVER": {
+    "DATA_DIR": "/opt/singnet/etcd/"
+  },
+  
+  "LOG": {
+    "LEVEL": "debug",
+    "OUTPUT": {
+      "TYPE": "stdout"
+    }
+  }
+}
