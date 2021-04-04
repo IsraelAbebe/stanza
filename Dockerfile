@@ -22,7 +22,7 @@ RUN python3.6 -m pip install --upgrade setuptools
 
 
 EXPOSE 2379
-EXPOSE 7000
+EXPOSE 7010
 
 # COPY requirements.txt /tmp
 
