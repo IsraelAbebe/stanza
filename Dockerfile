@@ -20,19 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN python3.6 -m pip install -U pip
 RUN python3.6 -m pip install --upgrade setuptools
 
-ENV SINGNET_REPOS=/opt/singnet
-ENV ORGANIZATION_ID="odyssey-org"
-ENV ORGANIZATION_NAME="odyssey"
-ENV SERVICE_ID="stanzaservice"
-ENV SERVICE_NAME="stanza Service"
-ENV SERVICE_IP="109.88.2.12"
-ENV SERVICE_PORT="2379"
-ENV DAEMON_PORT="7000"
-ENV DAEMON_HOST="0.0.0.0"
-ENV USER_ID="Israel"
-
-ARG nunet_adapter_address
-ENV nunet_adapter_address=${nunet_adapter_address}
 
 EXPOSE 2379
 EXPOSE 7000
@@ -63,9 +50,7 @@ RUN python3.6 -m pip install -r requirements.txt
 
 
 
-RUN python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. service/stanza.proto
-
-# WORKDIR /${SINGNET_REPOS}/STANZA/service
+RUN python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. service/stanza.proto 
 
 CMD ["python3.6", "start_service.py"]
 
