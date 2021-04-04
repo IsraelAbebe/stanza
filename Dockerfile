@@ -63,7 +63,7 @@ RUN python3.6 -m pip install -r requirements.txt
 
 
 
-RUN cd service && python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. stanza.proto
+RUN python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. stanza.proto
 
 # WORKDIR /${SINGNET_REPOS}/STANZA/service
 
