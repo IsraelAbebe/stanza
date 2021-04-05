@@ -21,6 +21,24 @@ RUN python3.6 -m pip install -U pip
 RUN python3.6 -m pip install --upgrade setuptools
 
 
+ENV SINGNET_REPOS=/opt/singnet
+ENV ORGANIZATION_ID="nunet-org"
+ENV ORGANIZATION_NAME="nunet"
+ENV SERVICE_ID="stanza-service"
+ENV SERVICE_NAME="stanza Service"
+ENV SERVICE_IP="195.201.197.25"
+ENV SERVICE_PORT="2379"
+ENV DAEMON_PORT="7010"
+ENV DAEMON_HOST="0.0.0.0"
+ENV USER_ID="Israel"
+
+ARG nunet_adapter_address
+ENV nunet_adapter_address=${nunet_adapter_address}
+
+EXPOSE 7000
+EXPOSE 7007
+
+
 EXPOSE 2379
 EXPOSE 7010
 
@@ -28,9 +46,6 @@ EXPOSE 7010
 COPY . /STANZA
 
 WORKDIR /STANZA
-
-
-
 
 RUN python3.6 -m pip install -e .
 
