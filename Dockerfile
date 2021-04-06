@@ -14,7 +14,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
         libsm6 \
         libxext6 \ 
-        libxrender-dev
+        libxrender-dev \
+        vim \
+        lsof
 
 
 RUN python3.6 -m pip install -U pip
@@ -26,7 +28,7 @@ ENV ORGANIZATION_ID="nunet-org"
 ENV ORGANIZATION_NAME="nunet"
 ENV SERVICE_ID="stanza-service"
 ENV SERVICE_NAME="stanza Service"
-ENV SERVICE_IP="195.201.197.25"
+ENV SERVICE_IP="109.88.2.12"
 ENV SERVICE_PORT="2379"
 ENV DAEMON_PORT="7010"
 ENV DAEMON_HOST="0.0.0.0"
@@ -35,17 +37,12 @@ ENV USER_ID="Israel"
 ARG nunet_adapter_address
 ENV nunet_adapter_address=${nunet_adapter_address}
 
-EXPOSE 7000
-EXPOSE 7007
-
-
 EXPOSE 2379
 EXPOSE 7010
 
+COPY . /${SINGNET_REPOS}/STANZA
 
-COPY . /STANZA
-
-WORKDIR /STANZA
+WORKDIR /${SINGNET_REPOS}/STANZA
 
 RUN python3.6 -m pip install -e .
 
