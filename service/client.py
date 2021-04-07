@@ -7,7 +7,7 @@ sys.path.insert(0, 'service/')
 from service_spec import stanza_pb2
 from service_spec import stanza_pb2_grpc
 
-channel = grpc.insecure_channel('localhost:2379')
+channel = grpc.insecure_channel('localhost:7011')
 
 stub = stanza_pb2_grpc.stanza_nlpStub(channel)
 
