@@ -1,5 +1,9 @@
 import grpc
 
+import sys
+
+sys.path.insert(0, 'service/')
+
 from service_spec import stanza_pb2
 from service_spec import stanza_pb2_grpc
 
