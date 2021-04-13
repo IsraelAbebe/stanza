@@ -14,14 +14,14 @@ stanza.download('en')
 #         return en_doc
 
 def preprocess(text):
-    en_nlp = stanza.Pipeline('en')
+    en_nlp = stanza.Pipeline('en',processors='tokenize,lemma,mwt,pos,depparse,ner,sentiment')
     en_doc = en_nlp(text)
     return  json.dumps(en_doc.to_dict()[0])
 
 
 
-# result = preprocess("Hello how are you")
-# print(result.to_dict()[0])
+result = preprocess("Hello how are you")
+print(result)
 
 
 # print(type(json.dumps(result.to_dict()[0])))

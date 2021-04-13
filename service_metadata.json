@@ -5,7 +5,7 @@
     "IPFS_END_POINT": "http://ipfs.singularitynet.io:80",
    
     "PASSTHROUGH_ENABLED": true,
-    "PASSTHROUGH_ENDPOINT": "http://109.88.2.12:2379",
+    "PASSTHROUGH_ENDPOINT": "http://109.88.2.12:7011",
     "ORGANIZATION_ID": "nunet-org",
     "SERVICE_ID": "stanza-service",
 

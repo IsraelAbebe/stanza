@@ -1,6 +1,6 @@
 registry = {
 	"server" : {
-		"grpc": 2379,
+		"grpc": 7011,
 	},
 }
 

@@ -29,7 +29,7 @@ server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 stanza_pb2_grpc.add_stanza_nlpServicer_to_server(stanza_nlpServicer(), server)
 
 print('Starting server. Listening on port 7011.')
-server.add_insecure_port('localhost:7011')
+server.add_insecure_port('0.0.0.0:7011')
 server.start()
 
 try:
